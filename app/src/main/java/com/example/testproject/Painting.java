@@ -31,6 +31,8 @@ public class Painting {
     public String getAuthorName() {
         return authorName;
     }
+    public boolean isFavorite() { return isFavorite; }
+    public void setFavorite(boolean favorite) { isFavorite = favorite; }
     public void setPaintingName(String paintingName) {
         this.paintingName = paintingName;
     }

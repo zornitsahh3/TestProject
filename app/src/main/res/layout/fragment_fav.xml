@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5C9C68FB"
-    tools:context=".FavFragment">
+    android:background="#CFB1E2"
+    android:padding="16dp">
 
+    <!-- Title Text -->
     <TextView
-        android:textSize="26sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Your favorite paintings at one place:" />
+        android:layout_height="wrap_content"
+        android:text="Your favorite paintings:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp"/>
+
+    <!-- ListView for favorites -->
     <ListView
         android:id="@+id/favoritesListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
-   <Button
-       android:id="@+id/btnBackToPaintings"
-       android:layout_marginTop="100dp"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Go back to\n the paintings" />
-</FrameLayout>
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/btnBackToPaintings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go back to the paintings"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

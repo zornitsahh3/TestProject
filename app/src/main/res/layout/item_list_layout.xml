@@ -41,4 +41,16 @@
         app:layout_constraintTop_toBottomOf="@id/paintingName"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Button Add to Favorites -->
+    <ImageButton
+        android:id="@+id/buttonFavorite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:contentDescription="Favorite button"
+        android:src="@drawable/sharp"
+    app:layout_constraintTop_toBottomOf="@id/paintingImage"
+    app:layout_constraintStart_toStartOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

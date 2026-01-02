@@ -2,6 +2,7 @@ package com.example.testproject;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         paintingArrayList = new ArrayList<>(dao.getAllPaintings());
 
 // --- Set up adapter ---
-        adapter = new MyCustomAdapter(getApplicationContext(), paintingArrayList);
+        adapter = new MyCustomAdapter(getApplicationContext(), paintingArrayList, userName);
         listView.setAdapter(adapter);
 
         // ------------------- EDGE-TO-EDGE PADDING -------------------
@@ -84,4 +85,22 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.tabs, menu);
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menu_favorites) { // Make sure your menu item id is correct
+            // Open Favorites fragment
+            FavFragment favFragment = new FavFragment(getIntent().getStringExtra("username"));
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main, favFragment)
+                    .addToBackStack(null)
+                    .commit();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
